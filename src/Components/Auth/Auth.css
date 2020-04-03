@@ -1,0 +1,44 @@
+.form-container {
+    display: flex;
+    flex-direction: row;
+    margin: 1%;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px -10px black;
+    background-color: whitesmoke;
+}
+
+.form-container {
+    position: fixed;
+    margin-top: 2.9%;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px -10px black;
+    background-color: whitesmoke;
+}
+
+input {
+    font-size: 1.5rem;
+    margin: 4%;
+    background-color: snow;
+    font-family: 'Cinzel', serif;
+    text-align-last: center;
+}
+
+.form-title {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 10%;
+}
+
+.submit:hover {
+    background-color: dodgerblue;
+    transition-duration: 1.5s;
+}

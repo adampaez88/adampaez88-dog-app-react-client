@@ -1,0 +1,12 @@
+.dog-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    box-shadow: 0 10px 20px -10px black;
+    background-color: whitesmoke;
+
+}
+
+.dog-form-inputs {
+    font-size: 1rem;
+}

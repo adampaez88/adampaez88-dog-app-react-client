@@ -1,0 +1,52 @@
+.dog-cards {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 30px -10px black;
+    text-align: center;
+    margin: 2%;
+    width: 29%;
+    height: 27rem;
+    line-height: 125%;
+    font-family: 'Zilla Slab', serif;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: .9vw;
+}
+
+.dog-cards:hover {
+    background-color: lightblue;
+    transform: scale(1.1);
+}
+
+.dog-breed-h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: fantasy;
+    margin: 3%;
+}
+
+.dog-cards > .dog-pic {
+    align-self: center;
+    height: 55%;
+    width: 80%;
+    box-shadow: 0 10px 30px -10px grey;
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+
+.dog-url {
+    text-decoration: none;
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+.delete-button {
+    width: 15%;
+    font-size: .85rem;
+    margin-top: 1%;
+}
+
+.delete-button:hover {
+    background-color: red;
+    color: snow;
+    font-weight: 900;
+}

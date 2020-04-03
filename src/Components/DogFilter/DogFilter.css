@@ -1,0 +1,15 @@
+.search {
+    box-shadow: 0 10px 10px -10px black;
+    height: fit-content;
+}
+
+.filter-div {
+    display: flex;
+    flex-direction: row;
+}
+
+.fa-search {
+    margin-top: 5%;
+    font-size: 1.8rem;
+    margin-left: 2%;
+}

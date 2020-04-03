@@ -1,0 +1,26 @@
+.footer {
+    background-color: lightblue;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.5%;
+    position: sticky;
+    bottom: 0;
+    font-family: fantasy;
+}
+
+.footer-items {
+    font-size: 2rem;
+}
+
+.github-link {
+    font-size: 2rem;
+    color: dodgerblue;
+}
+
+.github-link:hover {
+    transform: scale(1.5);
+    color: darkturquoise;
+    transition-duration: 2s;
+    transform: rotate(1turn);
+    text-transform: uppercase;
+}

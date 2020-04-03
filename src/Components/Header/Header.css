@@ -1,0 +1,43 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: lightblue;
+    height: 5rem;
+    margin-bottom: 4rem;
+    position: sticky;
+    top: 0;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    margin: 1%;
+    width: -webkit-fill-available;
+}
+
+.app-title {
+    font-size: 2.6rem;
+    padding: 1%;
+    margin-right: 5%;
+    color: #62929E;
+    font-family: 'Monoton', cursive;
+}
+
+.app-title:hover {
+    transform: scale(1.2);
+    color: mistyrose;
+    transition-duration: 2s;
+}
+
+.auth-buttons {
+    font-size: .8rem;
+    cursor: pointer;
+    margin-right: 1%;
+    font-family: 'Cinzel', serif;
+}
+
+.auth-buttons:hover {
+    background-color: dodgerblue;
+    transition-duration: 1.5s;
+}
