@@ -1,12 +1,11 @@
 import React from 'react';
 import DogCard from '../DogCard/DogCard'
-
 import './DogCollection.css'
 
-function DogCollection({dogs}){
+function DogCollection({ dogs, deleteDog }){
 
     const makeDogACard = dogs.map(dog => {
-        return <DogCard key={dog.id} dog={dog}/>
+        return <DogCard key={dog.id} deleteDog={deleteDog} dog={dog} /> 
     })
 
     return(

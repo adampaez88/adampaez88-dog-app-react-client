@@ -5,11 +5,11 @@
     text-align: center;
     margin: 2%;
     width: 29%;
-    height: 27rem;
+    height: 28rem;
     line-height: 125%;
-    font-family: 'Zilla Slab', serif;
     font-family: 'Gloria Hallelujah', cursive;
-    font-size: .9vw;
+    /* font-size: .8vw; */
+    font-size: inherit;
 }
 
 .dog-cards:hover {
@@ -43,6 +43,7 @@
     width: 15%;
     font-size: .85rem;
     margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 .delete-button:hover {

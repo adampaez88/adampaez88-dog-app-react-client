@@ -19,6 +19,12 @@ class App extends Component {
       .then(this.dogState)
   }
 
+  deleteDog = (id) => {
+    console.log(id)
+    // const dogFilter = this.state.dogs.filter(dog => dog.id != id)
+    // this.setState({dogs: dogFilter})
+  }
+
   dogState = (dogs) => {
     this.setState({
       dogs: dogs,
@@ -38,9 +44,35 @@ class App extends Component {
     this.setState({filteredDogs})
   }
 
-  addDog = (newDog) => {
-    this.setState({
-      dogs: [...this.state.dogs, newDog]
+  addDog = (doggie) => {
+    const { dogs } = this.state
+    const user = {username: localStorage.getItem('username')}
+    const dog = {
+        'breed': doggie.breed,
+        'bred_for': doggie.bred_for,
+        'life_span': doggie.life_span,
+        'height': doggie.height,
+        'weight': doggie.weight,
+        'temperament': doggie.temperament,
+        'image_url': doggie.image_url,
+        'info_url': doggie.info_url,
+        'user_id': localStorage.user_id
+    }
+
+
+    fetch('http://localhost:3000/dogs', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `bearer ${localStorage.getItem('token')}`
+      },
+      body: JSON.stringify(dog)
+    }).then(response => response.json())
+    .then(newDog => {
+      newDog.user = user
+      this.setState({
+        dogs: [...dogs, newDog]
+      })
     })
   }
 
@@ -50,8 +82,8 @@ class App extends Component {
       <div className="App">
         <Header />
 
-        <DogFormContainer updateSearch={this.updateSearch} addDog={this.addDog}/>
-        <DogCollection dogs={search ? filteredDogs : dogs } />
+        <DogFormContainer updateSearch={this.updateSearch} addDog={this.addDog} />
+        <DogCollection deleteDog={this.deleteDog} dogs={search ? filteredDogs : dogs } />
 
         <Footer />
       </div>

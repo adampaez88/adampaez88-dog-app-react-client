@@ -23,29 +23,7 @@ export default class DogForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        // const formData = new FormData(event.target)
-        // const dogBreed = formData.get('breed')
-        // const dogBredFor = formData.get('bred_for')
-        // const dogLifeSpan = formData.get('life_span')
-        // const dogHeight = formData.get('height')
-        // const dogWeight = formData.get('weight')
-        // const dogTemperament = formData.get('temperament')
-        // const dogImage = formData.get('image_url')
-        // const dogInfo = formData.get('info_url')
-    
-        const formData = new FormData(event.target)
-        const dog = {
-            breed: formData.get('breed'),
-            bred_for: formData.get('bred_for'),
-            life_span: formData.get('life_span'),
-            height: formData.get('height'),
-            weight: formData.get('weight'),
-            temperament: formData.get('temperament'),
-            image_url: formData.get('image_url'),
-            info_url: formData.get('info_url'),
-            user_id: `${localStorage.getItem('user_id')}`
-        }
-
+        
         this.props.addDog(this.state)
         this.setState({
             breed: '',
@@ -57,21 +35,10 @@ export default class DogForm extends Component {
             image_url: '',
             info_url: ''  
         })
-
         this.props.handleClick()
-
-        fetch('http://localhost:3000/dogs' , {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `${localStorage.getItem('token')}`
-            },
-            body: JSON.stringify(dog)
-        }).then(response => response.json())
-        .then(console.log)
     }
 
-    render() {
+    render(){
         return (
             <div className='dog-form-container'>
                 <form onSubmit={this.handleSubmit} className='dog-form'>

@@ -54,6 +54,7 @@ function Auth({ showSignup, showLogin, showAuthForm }){
         }).then(response => response.json())
         .then(stashToken => {
             localStorage.setItem('token', stashToken.token)
+            localStorage.setItem('user_id', stashToken.user_id)
         })
         event.target.reset()
         alert('Login Successful')
