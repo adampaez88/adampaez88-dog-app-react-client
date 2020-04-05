@@ -15,11 +15,11 @@ export default class DogFormContainer extends Component {
 
     render() {
         const { show } = this.state
-        const { addDog } = this.props
+        const { addDog, updateSearch } = this.props
         return (
             <div className='filter-and-form'>
 
-                <DogFilter updateSearch={this.props.updateSearch} />
+                <DogFilter updateSearch={updateSearch} />
 
                 <div className='button-container-dog-form'>
                     <button onClick={this.handleClick} className='add-dog-button'>

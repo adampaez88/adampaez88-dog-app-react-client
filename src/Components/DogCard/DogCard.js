@@ -16,13 +16,17 @@ class DogCard extends Component {
         })
     }
 
+    handleDelete = (id) => {
+        this.props.deleteDog(this.props.dog.id)
+    }
+
     render(){
         const { dog } = this.props
         const { isClicked } = this.state
         return(
             <div className='dog-cards'>
                 <h1 className='dog-breed-h1'>{dog.breed}</h1>
-                <img src={dog.image_url} onClick={this.handleClick} alt='dog-pic' className='dog-pic'></img>
+                    <img src={dog.image_url} onClick={this.handleClick} alt='dog-pic' className='dog-pic'></img>
                 {isClicked 
                     ? <div>
                         <h6>Height: {dog.height}</h6>
@@ -33,7 +37,7 @@ class DogCard extends Component {
                         <p className='info-tag'>
                             More Info: <a href={dog.info_url} className='dog-url'>{`${dog.breed}`}</a>
                         </p>
-                        <button className='delete-button'>Delete</button>
+                        <button onClick={this.handleDelete} className='delete-button'>Delete</button>
                     </div>
                     : null
                 }
