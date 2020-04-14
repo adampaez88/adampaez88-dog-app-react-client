@@ -19,11 +19,11 @@ class App extends Component {
       .then(this.dogState)
   }
 
-  deleteDog = (id) => {
-    console.log(id)
-    // const dogFilter = this.state.dogs.filter(dog => dog.id != id)
-    // this.setState({dogs: dogFilter})
-  }
+  // deleteDog = (id) => {
+  //   console.log(id)
+  //   // const dogFilter = this.state.dogs.filter(dog => dog.id != id)
+  //   // this.setState({dogs: dogFilter})
+  // }
 
   dogState = (dogs) => {
     this.setState({
