@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './DogCard.css'
+import Comments from '../Comments/Comments'
 
 class DogCard extends Component {
     
@@ -9,6 +10,12 @@ class DogCard extends Component {
         content: ''
     }
 
+    componentDidMount(){
+        fetch('http://localhost:3000/comments')
+            .then(response => response.json())
+            .then(comments => this.setState({comments: comments}))
+    }
+
     handleClick = (event) => {
         const {isClicked} = this.state
         this.setState({
@@ -16,9 +23,9 @@ class DogCard extends Component {
         })
     }
 
-    handleDelete = (id) => {
-        this.props.deleteDog(this.props.dog.id)
-    }
+    // handleDelete = (id) => {
+    //     this.props.deleteDog(this.props.dog.id)
+    // }
 
     render(){
         const { dog } = this.props
@@ -37,7 +44,8 @@ class DogCard extends Component {
                         <p className='info-tag'>
                             More Info: <a href={dog.info_url} className='dog-url'>{`${dog.breed}`}</a>
                         </p>
-                        <button onClick={this.handleDelete} className='delete-button'>Delete</button>
+                        <Comments comments={this.state.comments} />
+                        {/* <button onClick={this.handleDelete} className='delete-button'>Delete</button> */}
                     </div>
                     : null
                 }
