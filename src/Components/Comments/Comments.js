@@ -9,7 +9,7 @@ class Comments extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         // this.props.addComment(this.state)
-        
+
     }
 
     handleChange = (event) => {
@@ -24,6 +24,7 @@ class Comments extends Component {
             <>
                 <form onSubmit={this.handleSubmit} className='comment-form'>
                     <input type='text'  placeholder='Comment' className='comment-input'/>
+                    <input type='submit' value='Comment' className='comment-submit'/>
                 </form>
                 <h4 className='comments'>`user`: {this.props.comments.content}</h4>
             </>

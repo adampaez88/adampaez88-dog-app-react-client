@@ -23,6 +23,19 @@ class DogCard extends Component {
         })
     }
 
+    // addComment = (comment) => {
+    //     fetch('http://localhost:3000/comments', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({comment: comment.content})
+    //     }).then(response => response.json())
+    //     .then(newComment => this.setState({
+    //         newComment: [...this.state.comments, newComment]
+    //     }))
+    // }
+
     // handleDelete = (id) => {
     //     this.props.deleteDog(this.props.dog.id)
     // }
@@ -35,7 +48,7 @@ class DogCard extends Component {
                 <h1 className='dog-breed-h1'>{dog.breed}</h1>
                     <img src={dog.image_url} onClick={this.handleClick} alt='dog-pic' className='dog-pic'></img>
                 {isClicked 
-                    ? <div>
+                    ? <div className='display-div'>
                         <h6>Height: {dog.height}</h6>
                         <h6>Weight: {dog.weight}</h6>
                         <h6>Life Span: {dog.life_span}</h6>

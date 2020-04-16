@@ -2,3 +2,19 @@
     text-align: left;
     padding-left: 1%;
 }
+
+.comment-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.comment-input {
+    width: 30%;
+    font-size: inherit;
+}
+
+.comment-submit {
+    font-size: inherit;
+
+}
