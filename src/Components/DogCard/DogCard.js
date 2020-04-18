@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './DogCard.css'
-import Comments from '../Comments/Comments'
+
 
 class DogCard extends Component {
     
@@ -23,23 +23,6 @@ class DogCard extends Component {
         })
     }
 
-    // addComment = (comment) => {
-    //     fetch('http://localhost:3000/comments', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({comment: comment.content})
-    //     }).then(response => response.json())
-    //     .then(newComment => this.setState({
-    //         newComment: [...this.state.comments, newComment]
-    //     }))
-    // }
-
-    // handleDelete = (id) => {
-    //     this.props.deleteDog(this.props.dog.id)
-    // }
-
     render(){
         const { dog } = this.props
         const { isClicked } = this.state
@@ -57,7 +40,6 @@ class DogCard extends Component {
                         <p className='info-tag'>
                             More Info: <a href={dog.info_url} className='dog-url'>{`${dog.breed}`}</a>
                         </p>
-                        <Comments comments={this.state.comments} />
                         {/* <button onClick={this.handleDelete} className='delete-button'>Delete</button> */}
                     </div>
                     : null
